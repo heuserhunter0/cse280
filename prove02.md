@@ -21,14 +21,14 @@ $B : \neg (p \land q \land r)$
 
 |$p$|$q$|$r$|$q \land r$|$\neg (q \land r)$|$A: p \to \neg (q \land r)$|$p \land q \land r$|$B: \neg (p \land q \land r)$|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|T|T|T||||||
-|T|T|F||||||
-|T|F|T||||||
-|T|F|F||||||
-|F|T|T||||||
-|F|T|F||||||
-|F|F|T||||||
-|F|F|F||||||
+|T|T|T|T|T||||
+|T|T|F|F|T||||
+|T|F|T|F|F||||
+|T|F|F|F|T||||
+|F|T|T|T|T||||
+|F|T|F|F|T||||
+|F|F|T|F|F||||
+|F|F|F|F|T||||
 
 ## Question 2 (8 points)
 
@@ -44,14 +44,14 @@ express the following propositions in English senteneces (the first two are done
 |-|-|
 |$\exists x \ P(x)$|There exists a person who is older than 21.|
 |$\forall x \ P(x)$|All people are older than 21.|
-|$\exists x \ \neg P(x)$||
-|$\forall x \ \neg P(x)$||
-|$\exists x \ S(x)$||
-|$\forall x \ S(x)$||
-|$\neg \exists x \ S(x)$||
-|$\exists x \ \neg S(x)$||
-|$\neg \forall x \ \neg S(x)$||
-|$\forall x \ \neg S(x)$||
+|$\exists x \ \neg P(x)$|There exists a person who is not older than 21.|
+|$\forall x \ \neg P(x)$|All poeple are not older than 21.|
+|$\exists x \ S(x)$|There exists a person who is a student.|
+|$\forall x \ S(x)$|All people are students.|
+|$\neg \exists x \ S(x)$|There does not exists a person who is a student.|
+|$\exists x \ \neg S(x)$|There exists a person who is not a student.|
+|$\neg \forall x \ \neg S(x)$|Not all people are not students.|
+|$\forall x \ \neg S(x)$|All people are not students.|
 
 ## Question 3 (6 points)
 
