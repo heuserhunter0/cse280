@@ -96,7 +96,7 @@ Evaluate the following propositions to be True or False given that the domain of
 |$\exists x \ (x \text{ is negative})$|True|
 |$\forall x \ (x^2 \ge 0)$|True|
 |$\exists x \ (x^2 \ge 0)$|True|
-|$\exists x \ (x + x = 1)$|True|
+|$\exists x \ (x + x = 1)$|False|
 |$\exists x \ (x + 2 = 1)$|True|
 
 ## Question 5 (10 points)

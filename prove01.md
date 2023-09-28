@@ -53,7 +53,7 @@ Complete the following truth tables (the first one is done for you):
 |:-:|:-:|:-:|:-:|
 |T|T|F|T|
 |T|F|F|T|
-|F|T|T|F|
+|F|T|T|T|
 |F|F|T|F|
 
 4. $p \land \neg q$
