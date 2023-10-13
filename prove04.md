@@ -18,23 +18,23 @@ For each of these functions, determine if they are well-defined, one-to-one, and
 |Function|Well-Defined|One-to-One|Onto|
 |:-:|:-:|:-:|:-:|
 |$f : A \to B, \text{ where } f = \lbrace (1,a),(2,b),(3,c),(4,d) \rbrace$|Yes|Yes|Yes|
-|$f : A \to B, \text{ where } f = \lbrace (1,a),(2,a),(3,b),(4,d) \rbrace$||||
-|$f : A \to B, \text{ where } f = \lbrace (1,a),(2,b),(3,c) \rbrace$||||
-|$f : A \to B, \text{ where } f = \lbrace (1,a),(2,b),(2,c),(3,a),(4,a) \rbrace$||||
-|$f : \mathbf{R} \to \mathbf{R}, \text{ where } f(x) = x^3-x$||||
-|$f : \mathbf{Z} \to \mathbf{Z}, \text{ where } f(x) = -x+2$||||
-|$f : \mathbf{Z}^+ \to \mathbf{Z}^+, \text{ where } f(x) = \lceil \frac {n}{2} \rceil$||||
-|$f : \mathbf{R} \to \mathbf{R}, \text{ where } f(x) = \frac{5}{x-5}$||||
-|$f : \lbrace x \mid x \in \mathbf{R} , x \ne 5 \rbrace \to \mathbf{R}, \text{ where } f(x) = \frac{5}{x-5}$||||
+|$f : A \to B, \text{ where } f = \lbrace (1,a),(2,a),(3,b),(4,d) \rbrace$|Yes|No|No|
+|$f : A \to B, \text{ where } f = \lbrace (1,a),(2,b),(3,c) \rbrace$|Yes|Yes|No|
+|$f : A \to B, \text{ where } f = \lbrace (1,a),(2,b),(2,c),(3,a),(4,a) \rbrace$|Yes|No|No|
+|$f : \mathbf{R} \to \mathbf{R}, \text{ where } f(x) = x^3-x$|Yes|No|Yes|
+|$f : \mathbf{Z} \to \mathbf{Z}, \text{ where } f(x) = -x+2$|Yes|Yes|Yes|
+|$f : \mathbf{Z}^+ \to \mathbf{Z}^+, \text{ where } f(x) = \lceil \frac {n}{2} \rceil$|Yes|Yes|Yes|
+|$f : \mathbf{R} \to \mathbf{R}, \text{ where } f(x) = \frac{5}{x-5}$|No|No|No|
+|$f : \lbrace x \mid x \in \mathbf{R} , x \ne 5 \rbrace \to \mathbf{R}, \text{ where } f(x) = \frac{5}{x-5}$|Yes|Yes|No|
 
 ## Question 2 (9 points)
 
 Explain why $f : \mathbf{R} \to \mathbf{R} \text{ where } f(x) = x^2$ is a well defined funtion but is niether one-to-one nor onto (with counterexamples as needed).
 
 **Answer**:  
-* Is Well Defined because ...
-* Not One-to-One because ...
-* Not Onto because ...
+* Is Well Defined because assigns a unique value in co-domain to each real number in the domian
+* Not One-to-One because maps distinct inputs to same output i.e. 2 and -2 map to 4
+* Not Onto because does not cover the entire co-domain.
 
 ## Question 3 (9 points)
 
@@ -42,9 +42,9 @@ Find the inverse of each of the following functions, calculate $f(3)$, and then 
 
 |Domain|$f(x)$|$f^{-1}(x)$|$f(3)$|$(f^{-1} \circ f)(3)$
 |:-:|:-:|:-:|:-:|:-:|
-|$f : \mathbf{R} \to \mathbf{R}$|$2x+3$||||
-|$f : \lbrace x \in \mathbf{R} : x \gt 0 \rbrace \to \mathbf{R}$|$3^x$||||
-|$f : \lbrace x \in \mathbf{R} : x \ge -2 \rbrace \to \mathbf{R}^+$|$x^2-2$||||
+|$f : \mathbf{R} \to \mathbf{R}$|$2x+3$| $\frac {x-3}{2}$|9|3|
+|$f : \lbrace x \in \mathbf{R} : x \gt 0 \rbrace \to \mathbf{R}$|$3^x$|$\frac {3}{x}$|1|3|
+|$f : \lbrace x \in \mathbf{R} : x \ge -2 \rbrace \to \mathbf{R}^+$|$x^2-2$|$\sqrt{x+2}$|7|3|
 
 
 ## Question 4 (8 points)
@@ -58,9 +58,9 @@ Create lambda functions to implement the following functions that have domain of
 The test code below will use the lambda functions to generate the set of all $(X, f(X))$ where $X=\lbrace x \in \mathbf{Z} : -5 \le x \le 5 \rbrace$:
 
 ```python
-f1 = None # Put your lambda code here
-f2 = None # Put your lambda code here
-f3 = None # Put your lambda code here
+f1 = lambda x: x**3 + x**2 + x + 1
+f2 = lambda x: 3*x + 5
+f3 = lambda x: 2*x*(x + 1)
 
 domain = range(-5,6)
 f1_points = {(x,f1(x)) for x in domain}
