@@ -17,13 +17,13 @@ Using the encoding tree below, encode the word "MISSISSIPPI".
 
 ![](prove07_graph1.png)
 
-Answer: 
+Answer: 100110011001110110111
 
 ## Question 2 (5 points)
 
 Referring back to Question 1, how many bits smaller is the encoded value of "MISSISSIPPI" from that of the original string value?  Recall that each unecoded letter is 8 bits and each 1 or 0 in the encoding is 1 bit.
 
-Answer: 
+Answer: 21 bits for the encoded value vs the 88 bits of the original string value so a difference of 67 bits.
 
 ## Question 3 (15 points)
 
@@ -33,8 +33,8 @@ Identify the pre-order and post-order traversal for the tree below.  Your answer
 
 |Traversal Type|Traversal|
 |:-:|:-:|
-|Pre-Order||
-|Post-Order||
+|Pre-Order|A, B, D, H, I, E, J, P, Q, K, C, D, L, M,R, G, N, S, T, O|
+|Post-Order|H, I, D, P, Q, J, K, E, B, R, M, L, F, T, S, N, O, G, C, A|
 
 ## Question 4 (20 points)
 
@@ -44,8 +44,8 @@ Identify the Depth First Search tree and the Breadth First Search tree for the g
 
 |Traversal Type|Traversal|
 |:-:|:-:|
-|Depth First Search Tree||
-|Breadth First Search Tree||
+|Depth First Search Tree|(a, b), (b, c), (c, f), (f, g), (f, e), (c, d)|
+|Breadth First Search Tree|(a, b), (a, c), (a, d), (c, f), (b, e), (d, g)|
 
 
 
