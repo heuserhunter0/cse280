@@ -1,23 +1,42 @@
-def gcd(x,y):
-    for n in range(min(x,y),1,-1):
-        if x % n == 0 and y % n == 0:
-            return n
-    return 1
+import math
 
-def lcm(x, y):
-    return (x * y) // gcd(x, y)
+def extended_gcd(a, b):
+    # Extended Euclidean algorithm to find gcd(a, b) and coefficients s, t
+    (old_r, r) = (a, b)
+    (old_s, s) = (1, 0)
+    (old_t, t) = (0, 1)
+    
+    while r != 0:
+        q = old_r // r
+        (old_r, r) = (r, old_r - q * r)
+        (old_s, s) = (s, old_s - q * s)
+        (old_t, t) = (t, old_t - q * t)
+    
+    return (old_r, old_s, old_t)
 
+def encrypt(message, public_key, modulus):
+    # RSA encryption: c ≡ m^e (mod N)
+    return pow(message, public_key, modulus)
 
-print(gcd(12,15)) # 3
-print(gcd(12,24)) # 12
-print(gcd(12,18)) # 6 
-print(gcd(7,13))  # 1
-print(gcd(1,2))   # 1
-print(gcd(5,5))   # 5
-print("===================")
-print(lcm(12,15)) # 60
-print(lcm(12,24)) # 24
-print(lcm(12,18)) # 36 
-print(lcm(7,13))  # 91
-print(lcm(1,2))   # 2
-print(lcm(5,5))   # 5
+def decrypt(ciphertext, private_key, modulus):
+    # RSA decryption: m ≡ c^d (mod N)
+    return pow(ciphertext, private_key, modulus)
+
+# Given values
+p = 347
+q = 463
+e = 7
+N = p * q
+phi = (p - 1) * (q - 1)
+d = extended_gcd(e, phi)[1] % phi
+
+m = 5645
+
+# Encrypt the message
+c = encrypt(m, e, N)
+
+# Decrypt the message
+m_decrypted = decrypt(c, d, N)
+
+print("Encrypted message:", c)
+print("Decrypted message:", m_decrypted)
